@@ -4,11 +4,16 @@
 
 / {
     
-    &mt {
-        tapping-term-ms = <500>;
-        flavor = "tap-preferred";
-        quick-tap-ms = <150>;
-        global-quick-tap;
+    behaviors {
+        pmt: positional_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     combos {
@@ -41,7 +46,7 @@
     };
 
     macros {
-        copy: copy {
+        copy: copy_macro {
             compatible = "zmk,behavior-macro";
             label = "copy_macro";
             #binding-cells = <0>;
@@ -52,7 +57,7 @@
                 <&macro_tap &kp C>,
                 <&macro_release &kp RCTRL>,
         };
-        paste: paste {
+        paste: paste_macro {
             compatible = "zmk,behavior-macro";
             label = "paste_macro";
             #binding-cells = <0>;
@@ -63,7 +68,7 @@
                 <&macro_tap &kp V>,
                 <&macro_release &kp RCTRL>,
         };
-        cut: cut {
+        cut: cut_macro {
             compatible = "zmk,behavior-macro";
             label = "cut_macro";
             #binding-cells = <0>;
@@ -74,7 +79,7 @@
                 <&macro_tap &kp X>,
                 <&macro_release &kp RCTRL>,
         };
-        redo: redo {
+        redo: redo_macro {
             compatible = "zmk,behavior-macro";
             label = "redo_macro";
             #binding-cells = <0>;
@@ -93,7 +98,7 @@
         default_layer {
             bindings = <
           &kp Q   &kp W           &kp F               &kp P      &kp G                    &kp J                &kp L            &kp U    &kp Y  &kp SEMICOLON
- &mt LEFT_GUI A   &kp R  &mt LEFT_ALT S  &mt LEFT_CONTROL T      &kp D                    &kp H  &mt RIGHT_CONTROL N  &mt RIGHT_ALT E    &kp I          &kp O
+ &pmt LEFT_GUI A   &kp R  &pmt LEFT_ALT S  &pmt LEFT_CONTROL T      &kp D                    &kp H  &pmt RIGHT_CONTROL N  &pmt RIGHT_ALT E    &kp I          &kp O
           &kp Z   &kp X           &kp C               &kp V      &kp B                    &kp K                &kp M        &kp COMMA  &kp DOT   &kp QUESTION
                                                       &mo 2  &kp SPACE          &sk RIGHT_SHIFT                &sl 1
             >;
@@ -102,7 +107,7 @@
         Layer__1 {
             bindings = <
    &kp ESC  &kp LEFT_BRACKET      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp SINGLE_QUOTE          &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS      &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH
-   &kp TAB          &kp PLUS  &mt LEFT_ALT MINUS  &mt LEFT_CONTROL STAR         &kp SLASH              &kp AMPERSAND        &mt RCTRL EQUAL  &mt RALT UNDERSCORE           &kp EXCL     &kp DELETE
+   &kp TAB          &kp PLUS  &pmt LEFT_ALT MINUS  &pmt LEFT_CONTROL STAR         &kp SLASH              &kp AMPERSAND        &pmt RCTRL EQUAL  &pmt RALT UNDERSCORE           &kp EXCL     &kp DELETE
  &kp TILDE            &kp LT          &kp DOLLAR              &kp CARET       &kp PERCENT                   &kp PIPE               &kp HASH          &kp AT_SIGN             &kp GT      &kp GRAVE
                                                                  &trans     &kp BACKSPACE                     &trans                 &trans
             >;

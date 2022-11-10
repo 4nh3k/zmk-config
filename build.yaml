@@ -3,5 +3,5 @@ include:
     shield: td34_left
   - board: seeeduino_xiao_ble
     shield: td34_right
-  - board: seeeduino_xiao_ble
-    shield: reset
+#  - board: seeeduino_xiao_ble
+#    shield: reset
