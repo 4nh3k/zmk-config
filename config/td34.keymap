@@ -10,6 +10,7 @@
 };
 
 / {
+    
     combos {
         compatible = "zmk,combos";
 
@@ -40,7 +41,40 @@
     };
 
     macros {
-        copy: copy {
+        copy: copy_macro {
+            compatible = "zmk,behavior-macro";
+            label = "copy_macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp RCTRL>,
+                <&macro_tap &kp C>,
+                <&macro_release &kp RCTRL>,
+        };
+        paste: paste_macro {
+            compatible = "zmk,behavior-macro";
+            label = "paste_macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp RCTRL>,
+                <&macro_tap &kp V>,
+                <&macro_release &kp RCTRL>,
+        };
+        cut: cut_macro {
+            compatible = "zmk,behavior-macro";
+            label = "cut_macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp RCTRL>,
+                <&macro_tap &kp X>,
+                <&macro_release &kp RCTRL>,
+        };
+        redo: redo_macro {
             compatible = "zmk,behavior-macro";
             label = "copy_macro";
             #binding-cells = <0>;
@@ -114,6 +148,7 @@
  &tab  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN          &kp EQUAL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp PLUS
    &undo      &cut     &copy      &paste         &trans          &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
                                  &trans         &trans          &kp SPACE  &kp NUMBER_0
+
             >;
         };
 
