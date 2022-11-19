@@ -15,6 +15,9 @@ config ZMK_SPLIT
 
 if ZMK_DISPLAY
 
+config ZMK_WIDGET_BONGO_CAT
+	default y
+	
 config I2C
 	default y
 
