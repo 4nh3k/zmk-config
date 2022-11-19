@@ -28,6 +28,14 @@ endif # ZMK_DISPLAY
 
 if LVGL
 
+config LVGL_FONT_MONTSERRAT_12
+    default y
+    
+choice LVGL_THEME_DEFAULT_FONT_SMALL
+    default LVGL_THEME_DEFAULT_FONT_SMALL_MONTSERRAT_12
+
+endchoice
+
 config LVGL_VDB_SIZE
 	default 64
 
