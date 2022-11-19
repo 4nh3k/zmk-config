@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/petejohanson/zmk
+      url-base: https://github.com/petejohanson/zmk/tree/display/bongo-cat-widget
   projects:
     - name: zmk
       remote: zmkfirmware
