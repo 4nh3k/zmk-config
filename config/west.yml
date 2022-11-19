@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/4nh3k
+      url-base: https://github.com/nguyendown
   projects:
     - name: zmk
       remote: zmkfirmware
