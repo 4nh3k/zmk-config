@@ -101,7 +101,7 @@
 
         Layer__1 {
             bindings = <
-   &kp ESC  &kp LEFT_BRACKET      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp SINGLE_QUOTE          &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS      &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH
+   &kp ESC  &kp LEFT_BRACKET     &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp SINGLE_QUOTE          &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS      &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH
    &kp TAB          &kp PLUS   &mt LEFT_ALT MINUS  &mt LEFT_CONTROL STAR         &kp SLASH              &kp AMPERSAND        &mt RCTRL EQUAL  &mt RALT UNDERSCORE           &kp EXCL     &kp DELETE
  &kp TILDE            &kp LT          &kp DOLLAR              &kp CARET       &kp PERCENT                   &kp PIPE               &kp HASH          &kp AT_SIGN             &kp GT      &kp GRAVE
                                                                  &trans     &kp BACKSPACE                     &trans                 &trans
