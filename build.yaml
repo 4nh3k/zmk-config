@@ -2,4 +2,4 @@ include:
 - board: seeeduino_xiao_ble
   shield: td34_left
 - board: seeeduino_xiao_ble
-  shield: td34_right 
+  shield: td34_right
