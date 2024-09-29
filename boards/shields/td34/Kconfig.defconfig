@@ -16,16 +16,14 @@ config ZMK_SPLIT
 if ZMK_DISPLAY
 
 config I2C
-	default y
+    default y
 
 config SSD1306
-	default y
+    default y
 
 config SSD1306_REVERSE_MODE
-	default y
+    default y
 
 endif # ZMK_DISPLAY
 
 endif
-
-
