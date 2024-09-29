@@ -20,5 +20,5 @@
 include:
   - board: nice_nano_v2
     shield: reviung41
-  - board: [ "xiao_ble" ]
-  shield: [ "td34_left", "td34_right" ]
+  - board: ["xiao_ble"]
+    shield: ["td34_left", "td34_right"]
