@@ -24,9 +24,7 @@
             key-positions = <39 37>;
         };
     };
-    &mt {
-        tapping-term-ms = <350>;
-    };
+
     keymap {
         compatible = "zmk,keymap";
 
