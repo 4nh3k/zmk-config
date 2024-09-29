@@ -12,6 +12,7 @@ if SHIELD_TD34_LEFT || SHIELD_TD34_RIGHT
 
 config ZMK_SPLIT
     default y
+endif
 
 if ZMK_DISPLAY
 
@@ -25,5 +26,3 @@ config SSD1306_REVERSE_MODE
     default y
 
 endif # ZMK_DISPLAY
-
-endif

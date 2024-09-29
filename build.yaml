@@ -18,6 +18,8 @@
 #
 ---
 include:
+  - board: nice_nano_v2
+    shield: reviung41
   - board: xiao_ble
     shield: td34_left
   - board: xiao_ble
