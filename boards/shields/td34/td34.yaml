@@ -1,0 +1,10 @@
+file_format: "1"
+id: td34
+name: TrongDong34
+type: shield
+requires: [seeed_xiao]
+features:
+  - keys
+siblings:
+  - td34_left
+  - td34_right

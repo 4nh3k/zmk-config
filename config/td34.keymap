@@ -1,0 +1,145 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&mt {
+    tapping-term-ms = <400>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <200>;
+    global-quick-tap;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        Fkey_combo {
+            bindings = <&mo 3>;
+            key-positions = <30 31>;
+        };
+
+        enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <13 16>;
+        };
+
+        tab_combo {
+            bindings = <&kp TAB>;
+            key-positions = <14 15>;
+        };
+
+        prtsc_combo {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <5 4>;
+        };
+
+        del_combo {
+            bindings = <&kp DELETE>;
+            key-positions = <24 25>;
+        };
+    };
+
+    macros {
+        copy: copy {
+            compatible = "zmk,behavior-macro";
+            label = "copy_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp RCTRL>;
+        };
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            label = "paste_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_release>,
+                <&kp RCTRL>;
+        };
+        cut: cut {
+            compatible = "zmk,behavior-macro";
+            label = "cut_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp X>,
+                <&macro_release>,
+                <&kp RCTRL>;
+        };
+        undo: undo {
+            compatible = "zmk,behavior-macro";
+            label = "undo_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp Z>,
+                <&macro_release>,
+                <&kp RCTRL>;
+        };
+        tab: tab {
+            compatible = "zmk,behavior-macro";
+            label = "tab_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RIGHT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp RIGHT_ALT>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+         &kp Q  &kp W           &kp E               &kp R      &kp T              &kp Y                &kp U            &kp I    &kp O          &kp P
+&mt LEFT_GUI A  &kp S  &mt LEFT_ALT D  &mt LEFT_CONTROL F      &kp G              &kp H  &mt RIGHT_CONTROL J  &mt RIGHT_ALT K    &kp L  &kp SEMICOLON
+         &kp Z  &kp X           &kp C               &kp V      &kp B              &kp N                &kp M        &kp COMMA  &kp DOT      &kp SLASH
+                                                    &mo 2  &kp SPACE    &sk RIGHT_SHIFT                &mo 1
+            >;
+        };
+
+        Layer__1 {
+            bindings = <
+  &kp ESC  &kp LEFT_BRACKET      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS  &kp SINGLE_QUOTE    &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS      &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH
+  &kp TAB          &kp PLUS  &mt LEFT_ALT MINUS  &mt LEFT_CONTROL STAR         &kp SLASH        &kp AMPERSAND        &mt RCTRL EQUAL  &mt RALT UNDERSCORE           &kp EXCL     &kp DELETE
+&kp TILDE            &kp LT          &kp DOLLAR              &kp CARET       &kp PERCENT             &kp PIPE               &kp HASH          &kp AT_SIGN             &kp GT      &kp GRAVE
+                                                                &trans     &kp BACKSPACE               &trans                 &trans
+            >;
+        };
+
+        Layer__2 {
+            bindings = <
+     &tab  &kp HOME    &kp UP    &kp END    &kp PAGE_UP     &kp STAR  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp ENTER  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN    &kp EQUAL  &mt RCTRL N4   &mt RALT N5  &kp NUMBER_6   &kp PLUS
+    &undo      &cut     &copy     &paste         &trans    &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
+                                  &trans         &trans    &kp SPACE  &kp NUMBER_0
+            >;
+        };
+
+        Layer__3 {
+            bindings = <
+    &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6        &kp F7        &kp F8      &kp F9     &kp F10
+&bt BT_CLR  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0       &kp F11         &kp F12  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_NXT  &bt BT_PRV
+    &trans        &trans        &trans        &trans  &out OUT_USB    &out OUT_BLE        &trans        &trans      &trans      &trans
+                                              &trans        &trans     &bootloader    &sys_reset
+            >;
+        };
+    };
+};

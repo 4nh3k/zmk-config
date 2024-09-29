@@ -1,0 +1,15 @@
+#include "td34.dtsi"
+
+&default_transform { 
+    col-offset = <5>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&xiao_d 6 GPIO_ACTIVE_HIGH> // col1 in the schematic
+        , <&xiao_d 3 GPIO_ACTIVE_HIGH> // col2 in the schematic
+        , <&xiao_d 0 GPIO_ACTIVE_HIGH> // col3 in the schematic
+        , <&xiao_d 1 GPIO_ACTIVE_HIGH> // col4 in the schematic
+        , <&xiao_d 2 GPIO_ACTIVE_HIGH> // col5 in the schematic
+        ;
+};
